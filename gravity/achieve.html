@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Achievement System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/achieve.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/gc_logo1.png">
+</head>
+<body>
+  <!-- Cosmic Background -->
+  <div class="cosmic-container" id="particles-js"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar2">
+    <div class="navbar-left">
+      <img src="img/gc_logo2.png" alt="Logo" class="logo" />
+      <span class="brand-name">Gravity Coding</span>
+    </div>
+
+    <div class="navbar-center">
+      <h1 class="navbar-title">Achievement System</h1>
+    </div>
+
+    <!-- Hamburger Menu for Mobile -->
+    <!-- Hamburger Menu Button -->
+<button class="hamburger-btn" id="hamburgerBtn">&#9776;</button>
+
+  </nav>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul class="sidebar-menu">
+      <li class="sidebar-item active">My Achievement</li>
+      <li class="sidebar-item">Level 1</li>
+      <li class="sidebar-item">Level 2</li>
+      <li class="sidebar-item">Level 3</li>
+      <li class="sidebar-item">Level 4</li>
+    </ul>
+  </aside>
+
+  <div class="quote">
+    <h1>" A good programmer is someone who looks both ways before crossing a one way street. " - Doug Linder, Software Developer</h1>
+  </div>
+
+  <!-- First Table: Rank Progression -->
+  <div class="xp-table">
+    <h2>Your Rank Progression</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank Name</th>
+                <th>XP Required</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="icon">🚀</span> Novice Explorer</td>
+                <td>0 XP</td>
+                <td>Just starting the coding journey.</td>
+            </tr>
+            <tr>
+                <td><span class="icon">💡</span> Code Apprentice</td>
+                <td>200 XP</td>
+                <td>Gained basic coding knowledge.</td>
+            </tr>
+            <tr>
+                <td><span class="icon">⚙️</span> Debugging Prodigy</td>
+                <td>500 XP</td>
+                <td>Fixed first major bugs and errors.</td>
+            </tr>
+            <tr>
+                <td><span class="icon">🧑‍💻</span> Algorithm Adventurer</td>
+                <td>1000 XP</td>
+                <td>Learned and applied core algorithms.</td>
+            </tr>
+            <tr>
+                <td><span class="icon">🏗️</span> Software Architect</td>
+                <td>2000 XP</td>
+                <td>Built projects and structured code well.</td>
+            </tr>
+            <tr>
+                <td><span class="icon">🛠️</span> Code Engineer</td>
+                <td>3500 XP</td>
+                <td>Comfortable with problem-solving.</td>
+            </tr>
+            <tr>
+                <td><span class="icon">🔥</span> Gravity Guru</td>
+                <td>5000 XP</td>
+                <td>Mastered advanced concepts.</td>
+            </tr>
+            <tr>
+                <td><span class="icon">🌌</span> Cosmic Coder</td>
+                <td>7500 XP</td>
+                <td>A true expert in the coding universe.</td>
+            </tr>
+            <tr>
+                <td><span class="icon">🪐</span> Code Astronaut</td>
+                <td>10,000 XP</td>
+                <td>Reached the top-tier mastery level.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Second Table: XP Rewards -->
+<div class="xp-table">
+    <h2>XP Rewards</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>XP Earned</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Basic Lesson Completion</td>
+                <td>+10 XP</td>
+            </tr>
+            <tr>
+                <td>Quiz Completion</td>
+                <td>+15 XP</td>
+            </tr>
+            <tr>
+                <td>Coding Challenge Solved</td>
+                <td>+20 XP</td>
+            </tr>
+            <tr>
+                <td>Debugging Without Help</td>
+                <td>+30 XP</td>
+            </tr>
+            <tr>
+                <td>Daily Streak Bonus</td>
+                <td>+5 XP/day</td>
+            </tr>
+            <tr>
+                <td>Weekly Streak Bonus</td>
+                <td>+50 XP</td>
+            </tr>
+            <tr>
+                <td>Community Help (Answering Questions)</td>
+                <td>+15 XP</td>
+            </tr>
+            <tr>
+                <td>Project Submission</td>
+                <td>+100 XP</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="parent">
+      <div class="tooltip-container div1">
+        <span class="tooltip">Complete your first lesson.</span>
+        <span class="text">
+          <img src="img/1.png" class="achievement-icon">
+          <h3 class="achievement-title">First Steps</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div2">
+        <span class="tooltip">Complete the first module.</span>
+        <span class="text">
+          <img src="img/2.png" class="achievement-icon">
+          <h3 class="achievement-title">Beginner Badge</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div3">
+        <span class="tooltip">Complete 50% of a course.</span>
+        <span class="text">
+          <img src="img/3.png" class="achievement-icon">
+          <h3 class="achievement-title">Explorer</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div4">
+        <span class="tooltip">Complete the full course.</span>
+        <span class="text">
+          <img src="img/4.png" class="achievement-icon">
+          <h3 class="achievement-title">Master Coder</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div5">
+        <span class="tooltip">Finish all available courses.</span>
+        <span class="text">
+          <img src="img/5.png" class="achievement-icon">
+          <h3 class="achievement-title">Completionist</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div6">
+        <span class="tooltip">Complete a lesson every day for a week.</span>
+        <span class="text">
+          <img src="img/6.png" class="achievement-icon">
+          <h3 class="achievement-title">Consistent Learner</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div7">
+        <span class="tooltip">Retry a lesson after failing it 3 times.</span>
+        <span class="text">
+          <img src="img/7.png" class="achievement-icon">
+          <h3 class="achievement-title">Perseverance Award</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div8">
+        <span class="tooltip">Start at least 3 different courses.</span>
+        <span class="text">
+          <img src="img/8.png" class="achievement-icon">
+          <h3 class="achievement-title">Jack of All Trades</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div9">
+        <span class="tooltip">Complete a module in record time.</span>
+        <span class="text">
+          <img src="img/9.png" class="achievement-icon">
+          <h3 class="achievement-title">Speed Runner</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div10">
+        <span class="tooltip">Spend more than 10 hours learning.</span>
+        <span class="text">
+          <img src="img/10.png" class="achievement-icon">
+          <h3 class="achievement-title">Deep Diver</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div11">
+        <span class="tooltip">Execute your first program.</span>
+        <span class="text">
+          <img src="img/11.png" class="achievement-icon">
+          <h3 class="achievement-title">First Code Run</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div12">
+        <span class="tooltip">Fix your first syntax error.</span>
+        <span class="text">
+          <img src="img/12.png" class="achievement-icon">
+          <h3 class="achievement-title">Syntax Slayer</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div13">
+        <span class="tooltip">Solve a bug without using hints.</span>
+        <span class="text">
+          <img src="img/13.png" class="achievement-icon">
+          <h3 class="achievement-title">Debugging Guru</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div14">
+        <span class="tooltip">Solve 10 errors in one session.</span>
+        <span class="text">
+          <img src="img/14.png" class="achievement-icon">
+          <h3 class="achievement-title">The Compiler Whisperer</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div15">
+        <span class="tooltip">Complete 10 coding challenges.</span>
+        <span class="text">
+          <img src="img/15.png" class="achievement-icon">
+          <h3 class="achievement-title">Code Challenger</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div16">
+        <span class="tooltip">Use an advanced algorithm for the first time.</span>
+        <span class="text">
+          <img src="img/16.png" class="achievement-icon">
+          <h3 class="achievement-title">Hack the Matrix</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div17">
+        <span class="tooltip">Write a function that works on the first attempt.</span>
+        <span class="text">
+          <img src="img/17.png" class="achievement-icon">
+          <h3 class="achievement-title">Code Alchemist</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div18">
+        <span class="tooltip">Solve the same problem using two different languages.</span>
+        <span class="text">
+          <img src="img/18.png" class="achievement-icon">
+          <h3 class="achievement-title">Versatile Coder</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div19">
+        <span class="tooltip">Code for 2+ hours without a break.</span>
+        <span class="text">
+          <img src="img/19.png" class="achievement-icon">
+          <h3 class="achievement-title">Unstoppable Scripter</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div20">
+        <span class="tooltip">Solve a problem using a single line of code.</span>
+        <span class="text">
+          <img src="img/20.png" class="achievement-icon">
+          <h3 class="achievement-title">One-Liner Magician</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div21">
+        <span class="tooltip">Learn for 3 consecutive days.</span>
+        <span class="text">
+          <img src="img/21.png" class="achievement-icon">
+          <h3 class="achievement-title">Daily Devotee</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div22">
+        <span class="tooltip">Learn for 7 consecutive days.</span>
+        <span class="text">
+          <img src="img/22.png" class="achievement-icon">
+          <h3 class="achievement-title">Weekly Warrior</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div23">
+        <span class="tooltip">Code every day for a month.</span>
+        <span class="text">
+          <img src="img/23.png" class="achievement-icon">
+          <h3 class="achievement-title">Monthly Marathoner</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div24">
+        <span class="tooltip">Maintain a 100-day streak.</span>
+        <span class="text">
+          <img src="img/24.png" class="achievement-icon">
+          <h3 class="achievement-title">No Days Off</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div25">
+        <span class="tooltip">Complete a lesson after midnight.</span>
+        <span class="text">
+          <img src="img/25.png" class="achievement-icon">
+          <h3 class="achievement-title">Late Night Coder</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div26">
+        <span class="tooltip">Learn on a Saturday & Sunday.</span>
+        <span class="text">
+          <img src="img/26.png" class="achievement-icon">
+          <h3 class="achievement-title">Weekend Warrior</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div27">
+        <span class="tooltip">Code for more than 5 hours in a single session.</span>
+        <span class="text">
+          <img src="img/27.png" class="achievement-icon">
+          <h3 class="achievement-title">Caffeine Fueled</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div28">
+        <span class="tooltip">Code for 3+ nights in a row.</span>
+        <span class="text">
+          <img src="img/28.png" class="achievement-icon">
+          <h3 class="achievement-title">Night Owl</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div29">
+        <span class="tooltip">Return after a long break.</span>
+        <span class="text">
+          <img src="img/29.png" class="achievement-icon">
+          <h3 class="achievement-title">Back in Action</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div30">
+        <span class="tooltip">Solve 5 problems in a row without mistakes.</span>
+        <span class="text">
+          <img src="img/30.png" class="achievement-icon">
+          <h3 class="achievement-title">Code Machine</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div31">
+        <span class="tooltip">Solve a logic-based puzzle.</span>
+        <span class="text">
+          <img src="img/31.png" class="achievement-icon">
+          <h3 class="achievement-title">Puzzle Solver</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div32">
+        <span class="tooltip">Solve a problem in under 2 minutes.</span>
+        <span class="text">
+          <img src="img/32.png" class="achievement-icon">
+          <h3 class="achievement-title">Speed Coder</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div33">
+        <span class="tooltip">Unlock a hidden bonus level.</span>
+        <span class="text">
+          <img src="img/33.png" class="achievement-icon">
+          <h3 class="achievement-title">Gravity Master</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div34">
+        <span class="tooltip">Find a hidden feature in the game.</span>
+        <span class="text">
+          <img src="img/34.png" class="achievement-icon">
+          <h3 class="achievement-title">Easter Egg Hunter</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div35">
+        <span class="tooltip">Fail 10 times before succeeding.</span>
+        <span class="text">
+          <img src="img/35.png" class="achievement-icon">
+          <h3 class="achievement-title">Trial & Error Champ</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div36">
+        <span class="tooltip">Write 50+ lines of code in one session.</span>
+        <span class="text">
+          <img src="img/36.png" class="achievement-icon">
+          <h3 class="achievement-title">Keyboard Ninja</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div37">
+        <span class="tooltip">Break a 10+ day streak and start again.</span>
+        <span class="text">
+          <img src="img/37.png" class="achievement-icon">
+          <h3 class="achievement-title">Combo Breaker</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div38">
+        <span class="tooltip">Try a challenge outside your current course.</span>
+        <span class="text">
+          <img src="img/38.png" class="achievement-icon">
+          <h3 class="achievement-title">Wildcard</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div39">
+        <span class="tooltip">Complete a lesson from an old course update.</span>
+        <span class="text">
+          <img src="img/39.png" class="achievement-icon">
+          <h3 class="achievement-title">Time Traveler</h3>
+        </span>
+      </div>
+      
+      <div class="tooltip-container div40">
+        <span class="tooltip">Create a unique project using what you’ve learned.</span>
+        <span class="text">
+          <img src="img/40.png" class="achievement-icon">
+          <h3 class="achievement-title">Cosmic Creator</h3>
+        </span>
+      </div>
+      
+      
+
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="js/achieve.js"></script>
+</body>
+</html>

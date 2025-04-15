@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Code Playground</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/cp.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/gc_logo1.png">
+</head>
+<body>
+    <div class="gravitational-field" id="gravitationalField"></div>
+    <div class="stars" id="stars"></div>
+    <div class="blackhole" id="blackhole"></div>
+    <div class="planet" id="planet"></div>
+
+    <div class="timer-container" id="timerContainer">
+        <div class="timer" id="timer">00:00</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Gravity Code Playground</h1>
+            <p>"Learning to write programs stretches your mind and helps you think better."
+                <br>— Bill Gates, Co-founder of Microsoft</p>
+        </header>
+
+        <div class="setup-panel">
+            <div class="controls">
+                <div class="control-group gravity-affected">
+                    <label for="language">Programming Language</label>
+                    <select id="language">
+                        <option value="" disabled selected>Select a language</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="react">React</option>
+                        <option value="mongodb">MongoDB</option>
+                    </select>
+                </div>
+                <div class="control-group gravity-affected">
+                    <label for="difficulty">Challenge Level</label>
+                    <select id="difficulty" disabled>
+                        <option value="" disabled selected>Select difficulty</option>
+                        <option value="easy">Nebula (Easy)</option>
+                        <option value="medium">Planetary (Medium)</option>
+                        <option value="hard">Black Hole (Hard)</option>
+                    </select>
+                </div>
+                <button id="startBtn" class="btn btn-pulse gravity-affected" disabled>Launch Code</button>
+            </div>
+        </div>
+
+        <div class="rules-panel">
+            <h3 style="color: var(--secondary); margin-bottom: 1rem; font-family: 'Orbitron', sans-serif;">
+                <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>Mission Rules
+            </h3>
+            <ul class="rules-list">
+                <li><i class="fas fa-globe"></i> Choose from 5 programming languages</li>
+                <li><i class="fas fa-satellite"></i> Three difficulty levels available</li>
+                <li><i class="fas fa-question-circle"></i> Each level has unique challenges</li>
+                <li><i class="fas fa-clock"></i> Timed challenges based on difficulty</li>
+                <li><i class="fas fa-rocket"></i> Complete the code to solve each challenge</li>
+            </ul>
+        </div>
+
+        <div id="codingInterface" class="coding-interface">
+            <div class="code-editor gravity-affected">
+                <div class="problem-statement">
+                    <h3 id="problemTitle">Mission Objective</h3>
+                    <p id="problemDescription">Your mission is to complete the code to solve the given challenge. Follow the instructions in the comments.</p>
+                </div>
+                <textarea id="codeArea" class="code-area" spellcheck="false"></textarea>
+            </div>
+            <div class="output-container gravity-affected">
+                <div id="outputContent" class="output-content">Output will appear here...</div>
+            </div>
+            <div class="action-buttons">
+                <button id="prevBtn" class="btn btn-reset gravity-affected" disabled>Previous</button>
+                <button id="runBtn" class="btn btn-run gravity-affected">Execute Code</button>
+                <button id="resetBtn" class="btn btn-reset gravity-affected">Reset Mission</button>
+                <button id="nextBtn" class="btn btn-reset gravity-affected">Next</button>
+                <button id="submitBtn" class="btn btn-submit gravity-affected" disabled>Submit</button>
+            </div><br>
+            <div class="back-button-wrapper">
+                <button id="backBtn" class="glass-button galaxy-hover">Back to Launch Pad</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="js/cp.js"></script>
+</body>
+</html>

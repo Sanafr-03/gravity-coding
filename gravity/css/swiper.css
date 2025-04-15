@@ -1,0 +1,803 @@
+:root {
+    --satellite-blue: #00f2ff;
+    --satellite-pink: #ff00f2;
+    --satellite-gold: #ffd700;
+    --data-green: #00ff88;
+    --warning-orange: #ff8c00;
+    --thruster-red: #ff3c00;
+    --helmet-glass: rgba(0, 242, 255, 0.2);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 20px;
+    color: white;
+    font-family: 'Space Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .section-heading {
+    margin-right: -50px;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: var(--hud-glow-mix);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: whitesmoke;
+    text-shadow: 0 0 20px var(#0066ff), 0 0 20px var(#ae00ff9c);
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  /* Testimonials Section */
+.testimonials-section {
+  margin-right: 30px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .swiper-container {
+    width: 100%;
+    max-width: 750px;
+    margin-left: 30%;
+    height: 500px; /* Fixed height for proper card stacking */
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+  
+  /* Ensure cards are properly stacked */
+  .swiper-wrapper {
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  /* Adjust card size for mobile */
+  @media (max-width: 768px) {
+    .swiper-container {
+      height: 450px;
+      margin-left:-80px;
+    }
+    .swiper-slide {
+      width: 85%;
+    }
+  }
+
+  .swiper {
+    padding: 30px 0;
+  }
+
+  /* SATELLITE CARD DESIGN - Mobile First */
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: 
+      linear-gradient(135deg, rgba(20, 20, 30, 0.9) 0%, rgba(10, 10, 20, 0.95) 100%);
+    border-radius: 12px;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow:
+      0 0 0 1px rgba(0, 242, 255, 0.3),
+      0 0 20px rgba(0, 242, 255, 0.2),
+      0 0 40px rgba(255, 0, 242, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    transform-style: preserve-3d;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  /* Responsive adjustments */
+  @media (min-width: 480px) {
+    .swiper-slide {
+      padding: 25px 20px;
+      border-radius: 14px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cosmic-container {
+      margin-left:50px;
+    }
+    .swiper-slide {
+      padding: 35px 25px;
+      border-radius: 16px;
+      width: 80%;
+    }
+    
+    .section-heading {
+      margin: 3rem 0;
+      letter-spacing: 4px;
+    }
+    
+    .swiper {
+      padding: 60px 0;
+    }
+  }
+
+  /* Satellite Frame Elements */
+  .swiper-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      var(--satellite-blue), 
+      var(--satellite-pink), 
+      transparent);
+    opacity: 0.7;
+  }
+
+  .swiper-slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      var(--satellite-gold), 
+      transparent);
+  }
+
+  /* Solar Panel Effect */
+  .solar-panel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 45px;
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8) 2px,
+      rgba(255, 215, 0, 0.3) 2px,
+      rgba(255, 215, 0, 0.3) 4px
+    );
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    transform: skewY(-15deg);
+  }
+
+  @media (min-width: 768px) {
+    .solar-panel {
+      width: 40px;
+      height: 60px;
+      top: 15px;
+      right: 15px;
+    }
+  }
+
+  /* Satellite Antenna */
+  .antenna {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 15px;
+  }
+
+  .antenna::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 12px;
+    background: var(--satellite-blue);
+    transform: translateX(-50%);
+  }
+
+  .antenna::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--satellite-blue) 0%, transparent 70%);
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px var(--satellite-blue);
+  }
+
+  @media (min-width: 768px) {
+    .antenna {
+      top: -10px;
+      height: 20px;
+    }
+    .antenna::before {
+      height: 15px;
+    }
+    .antenna::after {
+      top: 15px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  /* Status Lights */
+  .status-lights {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 6px;
+  }
+
+  .status-light {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  @media (min-width: 768px) {
+    .status-lights {
+      bottom: 15px;
+      left: 15px;
+      gap: 8px;
+    }
+    .status-light {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  .light-green {
+    background: var(--data-green);
+    box-shadow: 0 0 3px var(--data-green);
+    animation: pulse 2s infinite;
+  }
+
+  .light-orange {
+    background: var(--warning-orange);
+    box-shadow: 0 0 3px var(--warning-orange);
+    animation: pulse 2.5s infinite 0.5s;
+  }
+
+  .light-blue {
+    background: var(--satellite-blue);
+    box-shadow: 0 0 3px var(--satellite-blue);
+    animation: pulse 3s infinite 1s;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+
+  /* Data Display */
+  .data-display {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--data-green);
+    text-align: right;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 480px) {
+    .data-display {
+      font-size: 0.7rem;
+      line-height: 1.3;
+    }
+  }
+
+  /* Astronaut Helmet */
+  .astronaut-helmet {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s ease;
+    border: 2px solid var(--satellite-blue);
+    box-shadow: 
+      0 0 15px var(--satellite-blue),
+      0 0 30px rgba(0, 242, 255, 0.3);
+    overflow: hidden;
+  }
+
+  .astronaut-helmet::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, 
+      transparent 30%,
+      var(--helmet-glass) 40%,
+      transparent 50%);
+    transform: rotate(45deg);
+    animation: helmetGlow 8s linear infinite;
+  }
+
+  .astronaut-helmet::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, 
+      rgba(255,255,255,0.1) 0%,
+      rgba(0,242,255,0.05) 30%,
+      transparent 70%);
+    border: 1px solid rgba(0, 242, 255, 0.2);
+  }
+
+  .astronaut-face {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 480px) {
+    .astronaut-helmet {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .astronaut-helmet {
+      width: 110px;
+      height: 110px;
+      margin-bottom: 20px;
+      border-width: 3px;
+      box-shadow: 
+        0 0 25px var(--satellite-blue),
+        0 0 50px rgba(0, 242, 255, 0.3);
+    }
+  }
+
+  @keyframes helmetGlow {
+    0% { transform: rotate(45deg) translateX(-10%); }
+    100% { transform: rotate(45deg) translateX(10%); }
+  }
+
+  /* Orbital Rings */
+  .orbit-ring {
+    position: absolute;
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    border-radius: 50%;
+    animation: rotateOrbit linear infinite;
+  }
+
+  .ring-1 {
+    width: 90px;
+    height: 90px;
+    top: calc(50% - 45px);
+    left: calc(50% - 45px);
+    animation-duration: 20s;
+  }
+
+  .ring-2 {
+    width: 110px;
+    height: 110px;
+    top: calc(50% - 55px);
+    left: calc(50% - 55px);
+    animation-duration: 25s;
+    animation-direction: reverse;
+  }
+
+  @media (min-width: 480px) {
+    .ring-1 {
+      width: 100px;
+      height: 100px;
+      top: calc(50% - 50px);
+      left: calc(50% - 50px);
+    }
+    .ring-2 {
+      width: 120px;
+      height: 120px;
+      top: calc(50% - 60px);
+      left: calc(50% - 60px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .ring-1 {
+      width: 120px;
+      height: 120px;
+      top: calc(50% - 60px);
+      left: calc(50% - 60px);
+    }
+    .ring-2 {
+      width: 140px;
+      height: 140px;
+      top: calc(50% - 70px);
+      left: calc(50% - 70px);
+    }
+  }
+
+  @keyframes rotateOrbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Testimonial Content */
+  .testimonial-content {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.9);
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    /* Prevent text overflow on mobile */
+    overflow: hidden;
+    padding-top: 10px;
+  }
+
+  @media (min-width: 480px) {
+    .testimonial-content {
+      font-size: 1rem;
+      min-height: 100px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-content {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      min-height: 120px;
+    }
+  }
+
+  .encrypted {
+    font-family: 'Space Mono', monospace;
+    color: var(--satellite-blue);
+    letter-spacing: 1px;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    font-size: 0.8rem;
+    padding: 0 10px;
+    /* Ensure binary text doesn't overlap helmet */
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  @media (min-width: 480px) {
+    .encrypted {
+      font-size: 0.9rem;
+      top: 25px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .encrypted {
+      font-size: 1rem;
+      top: 30px;
+    }
+  }
+
+  .decrypted {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.7s ease-out;
+    text-shadow: 0 0 5px rgba(0, 242, 255, 0.3);
+    padding: 0 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .decrypted.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Thruster Boost Effect */
+  .thruster-effect {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 20px;
+    background: linear-gradient(to top, 
+      var(--thruster-red),
+      var(--warning-orange),
+      transparent);
+    border-radius: 50% 50% 0 0;
+    filter: blur(6px);
+    opacity: 0;
+    z-index: -1;
+  }
+
+  @media (min-width: 768px) {
+    .thruster-effect {
+      bottom: -20px;
+      height: 30px;
+      filter: blur(10px);
+    }
+  }
+
+  .thruster-effect.active {
+    animation: thrusterBoost 1s ease-out;
+  }
+
+  @keyframes thrusterBoost {
+    0% { 
+      opacity: 0;
+      transform: translateX(-50%) scale(0.8);
+    }
+    20% {
+      opacity: 0.8;
+      transform: translateX(-50%) scale(1.2);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) scale(0.9);
+    }
+  }
+
+  /* Thruster Particles */
+  .thruster-particle {
+    position: absolute;
+    bottom: 0;
+    background: var(--thruster-red);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  /* Data Stream Effect */
+  .data-stream {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      transparent,
+      rgba(0, 242, 255, 0.05),
+      transparent,
+      transparent
+    );
+    transform: rotate(20deg);
+    opacity: 0;
+  }
+
+  .data-stream.active {
+    animation: dataStream 0.8s linear;
+  }
+
+  @keyframes dataStream {
+    0% { 
+      opacity: 0.8;
+      transform: translateY(-100%) rotate(20deg);
+    }
+    100% { 
+      opacity: 0;
+      transform: translateY(100%) rotate(20deg);
+    }
+  }
+
+  /* Binary Decode Effect */
+  .binary-decode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 242, 255, 0.05),
+        rgba(0, 242, 255, 0.05) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .binary-decode.active {
+    animation: binaryDecode 1s ease-out;
+  }
+
+  @keyframes binaryDecode {
+    0% { 
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  /* Author Styling */
+  .author {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--data-green);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    position: relative;
+    padding-top: 8px;
+  }
+
+  .author::before {
+    content: '// ASTRONAUT_';
+    color: var(--satellite-blue);
+    font-size: 0.7rem;
+  }
+
+  .author::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      var(--data-green), 
+      transparent);
+    margin: 6px auto 0;
+  }
+
+  @media (min-width: 320px) {
+    .author {
+      font-size: 6px;
+      margin-top: 10px;
+      padding-top: 10px;
+      margin-bottom:20px;
+    }
+    .author::before {
+      font-size: 6px;
+      margin-bottom:2px;
+    }
+    .author::after {
+      width: 50px;
+      margin: 8px auto 0;
+      margin-bottom:20px;
+    }
+    .author::after {
+    font-size:6px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .author {
+      font-size: 6px;
+      margin-top: 10px;
+      padding-top: 10px;
+      margin-bottom:20px;
+    }
+    .author::before {
+      font-size: 6px;
+      margin-bottom:20px;
+    }
+    .author::after {
+      width: 50px;
+      margin: 8px auto 0;
+      margin-bottom:20px;
+    }
+    .author::after {
+    font-size:6px;
+    }
+  }
+
+  @media (min-width: 480px) {
+    .author {
+      font-size: 6px;
+      margin-bottom:20px;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+    .author::before {
+      font-size: 6px;
+      margin-bottom:20px;
+    }
+    .author::after {
+      width: 50px;
+      margin: 8px auto 0;
+      margin-bottom:20px;
+    }
+    .author::after {
+    font-size:6px;
+    margin-bottom:20px;
+    }
+  }
+
+  /* Hover Effects */
+  .swiper-slide:hover {
+    transform: translateY(-5px) rotateX(3deg);
+    box-shadow:
+      0 0 0 1px rgba(0, 242, 255, 0.5),
+      0 0 20px rgba(0, 242, 255, 0.3),
+      0 0 40px rgba(255, 0, 242, 0.2);
+  }
+
+  .swiper-slide:hover .astronaut-helmet {
+    transform: scale(1.05) rotate(3deg);
+    box-shadow: 
+      0 0 20px var(--satellite-blue),
+      0 0 40px rgba(0, 242, 255, 0.4);
+  }
+
+  @media (min-width: 768px) {
+    .swiper-slide:hover {
+      transform: translateY(-10px) rotateX(5deg);
+      box-shadow:
+        0 0 0 2px rgba(0, 242, 255, 0.5),
+        0 0 40px rgba(0, 242, 255, 0.3),
+        0 0 80px rgba(255, 0, 242, 0.2);
+    }
+    .swiper-slide:hover .astronaut-helmet {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 
+        0 0 30px var(--satellite-blue),
+        0 0 60px rgba(0, 242, 255, 0.5);
+    }
+  }
+
+  /* Gravity Distortion Effect */
+  .gravity-distortion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, 
+      transparent 60%, 
+      rgba(0, 242, 255, 0.1) 70%, 
+      transparent 80%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .swiper-slide:hover .gravity-distortion {
+    opacity: 1;
+  }

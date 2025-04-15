@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+.team-section {
+  margin-right: -50px;
+    font-family: 'Orbitron', sans-serif;
+    padding: 20px;
+  }
+
+  .cards-containerr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .team-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+
+  .team-section .page-header.typing::after {
+    content: '|';
+    position: absolute;
+    right: -10px;
+    animation: blink 0.7s infinite;
+    color: #20d866;
+}
+
+  .team-section .tcard-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 80px;
+      width: 100%;
+    }
+
+    .team-section .tcard {
+      width: 230px;
+      height: 340px;
+      border-radius: 20px;
+      background: #000000;
+      padding: 5px;
+      overflow: hidden;
+      box-shadow: rgba(32, 216, 102, 0.2) 0px 7px 20px 0px;
+      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid #20d866;
+    }
+
+    .team-section .tcard:hover {
+      transform: scale(1.05);
+    }
+
+    .team-section .top-section {
+      height: 180px;
+      border-radius: 15px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: rgb(0, 0, 0) url('/gif/PBG.gif') no-repeat center center;
+      background-size: cover;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .team-section .social-icons {
+      position: absolute;
+      top: 5px;
+      left:20px;
+      z-index: 3;
+      display: flex;
+      gap: 14px;
+    }
+
+    .team-section .social-icons a {
+      color: #20d866;
+      background: rgba(0,0,0,0.7);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: 1px solid #20d866;
+      font-size: 10px;
+    }
+
+    .team-section .social-icons a:hover {
+      background: #20d866;
+      color: #000;
+      transform: scale(1.2);
+    }
+
+    .team-section .top-section .person-image {
+      position: absolute;
+      bottom: -20px;
+      right: 15%;
+      height: 90%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .team-section .top-section .border {
+        border-bottom-right-radius: 10px;
+      border-bottom:  2px solid #20d866;
+      border-right:  2px solid #20d866;
+      height: 30px;
+      width: 100px;
+      background: #1b233d;
+      position: relative;
+      transform: skew(-40deg);
+      z-index: 2;
+      border-top: none;
+      border-left: none;
+      box-shadow: none;
+    }
+    
+    .team-section .top-section .border::before {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 0;
+      right: -15px;
+      background: transparent;
+      border-top-left-radius: 10px;
+      box-shadow: -5px -5px 0 2px #1b233d;
+    }
+
+    .team-section .top-section::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background: transparent;
+      height: 15px;
+      width: 15px;
+      border-top-left-radius: 15px;
+      box-shadow: -5px -5px 0 2px #1b233d;
+      z-index: 2;
+    }
+
+    .team-section .bottom-section {
+      margin-top: 15px;
+      padding: 10px 5px;
+      position: relative;
+    }
+
+    .team-section .bottom-section::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #20d866, transparent);
+      box-shadow: 0 0 5px #20d866;
+    }
+
+    .team-section .ttitle {
+      display: block;
+      font-size: 17px;
+      font-weight: bolder;
+      color: #ffffff;
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 5px #20d866;
+      position: relative;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .team-section .ttitle::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      background: #20d866;
+      box-shadow: 0 0 5px #20d866;
+    }
+
+    .team-section .role {
+      margin-top: 10%;
+      display: block;
+      font-size: 12px;
+      font-weight: bolder;
+      color: #20d866;
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 5px #20d866, 0 0 10px rgba(32, 216, 102, 0.5);
+      position: relative;
+      padding: 8px 0;
+    }
+
+    /* Neon light rays only */
+    .team-section .role::before,
+    .team-section .role::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 2px;
+      background: #20d866;
+      box-shadow: 0 0 5px #20d866;
+    }
+
+    .team-section .role::before {
+      left: 0;
+      transform: translate(-100%, -50%);
+    }
+
+    .team-section .role::after {
+      right: 0;
+      transform: translate(100%, -50%);
+    }

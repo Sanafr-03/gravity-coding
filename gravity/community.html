@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/community.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/gc_logo1.png">
+</head>
+<body>
+    <div id="floatingIcons"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Cosmic Code Forum</h1>
+            <p>"Software innovation, like almost every other kind of innovation, requires the ability to collaborate and share ideas with other people."
+                <br>— Bill Gates, Co-founder of Microsoft</p>
+        </header>
+        
+        <div class="language-selector">
+            <div class="hud-element hud-bottom-left">POWER: 100%</div>
+            <div class="hud-element hud-bottom-right">STATUS: NOMINAL</div>
+            
+            <h2><i class="fas fa-satellite"></i> Language Control Console <i class="fas fa-satellite"></i></h2>
+            <p>Select your primary coding language from the station console:</p>
+            
+            <div class="language-grid">
+                <div class="language-card" data-lang="javascript">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    <span>JavaScript</span>
+                </div>
+                <div class="language-card" data-lang="mongodb">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                    <span>MongoDB</span>
+                </div>
+                <div class="language-card" data-lang="react">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                    <span>React</span>
+                </div>
+                <div class="language-card" data-lang="html">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                    <span>HTML</span>
+                </div>
+                <div class="language-card" data-lang="css">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                    <span>CSS</span>
+                </div>
+                <div class="language-card" data-lang="nodejs">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                    <span>Node.js</span>
+                </div>
+                <div class="language-card" data-lang="npm" id="center-logo">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" alt="npm">
+                    <span>npm</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats-container" id="statsContainer">
+            <h3><i class="fas fa-chart-bar"></i> Galactic Question Statistics</h3>
+            <p>Distribution of questions across coding languages in our galaxy:</p>
+            
+            <div class="graph-container" id="graphContainer">
+                <div class="graph-bar" data-value="120" style="height: 0%; background: linear-gradient(to top, var(--react-blue), var(--neon-purple));">
+                    <span class="graph-bar-value">120</span>
+                    <span class="graph-bar-label">React</span>
+                </div>
+                <div class="graph-bar" data-value="180" style="height: 0%; background: linear-gradient(to top, var(--html-orange), var(--planet-orange));">
+                    <span class="graph-bar-value">180</span>
+                    <span class="graph-bar-label">HTML</span>
+                </div>
+                <div class="graph-bar" data-value="150" style="height: 0%; background: linear-gradient(to top, var(--css-blue), var(--neon-blue));">
+                    <span class="graph-bar-value">150</span>
+                    <span class="graph-bar-label">CSS</span>
+                </div>
+                <div class="graph-bar" data-value="220" style="height: 0%; background: linear-gradient(to top, var(--node-green), #5cb85c);">
+                    <span class="graph-bar-value">220</span>
+                    <span class="graph-bar-label">Node.js</span>
+                </div>
+                <div class="graph-bar" data-value="90" style="height: 0%; background: linear-gradient(to top, var(--npm-red), #d9534f);">
+                    <span class="graph-bar-value">90</span>
+                    <span class="graph-bar-label">npm</span>
+                </div>
+                <div class="graph-bar" data-value="75" style="height: 0%; background: linear-gradient(to top, var(--mongo-green), #5cb85c);">
+                    <span class="graph-bar-value">75</span>
+                    <span class="graph-bar-label">MongoDB</span>
+                </div>
+                <div class="graph-bar" data-value="250" style="height: 0%; background: linear-gradient(to top, var(--star-yellow), var(--planet-orange));">
+                    <span class="graph-bar-value">250</span>
+                    <span class="graph-bar-label">JavaScript</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="forum-container" id="forumContainer">
+            <h2><i class="fas fa-comments"></i> JavaScript Discussions</h2>
+            
+            <div class="question">
+                <div class="question-header">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="profile-pic">
+                    <div class="user-info">
+                        <h3 class="user-name">QuantumCoder</h3>
+                        <p class="post-date">Posted on: 2023-05-15</p>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <p class="question-text">
+                        Has anyone implemented gravity simulations in JavaScript using Three.js? I'm trying to create a galaxy simulation but my particles keep collapsing into a single point. How can I maintain stable orbits while keeping the simulation realistic?
+                    </p>
+                    <div class="question-footer">
+                        <div class="tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Three.js</span>
+                            <span class="tag">Physics</span>
+                            <span class="tag">Simulation</span>
+                        </div>
+                        <div class="actions">
+                            <button class="action-btn"><i class="far fa-thumbs-up"></i> 12</button>
+                            <button class="action-btn"><i class="far fa-comment"></i> 5</button>
+                            <button class="action-btn"><i class="fas fa-share"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <div class="question-header">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" class="profile-pic">
+                    <div class="user-info">
+                        <h3 class="user-name">StellarDev</h3>
+                        <p class="post-date">Posted on: 2023-05-10</p>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <p class="question-text">
+                        I'm working on a space-themed game with gravitational slingshot mechanics. What's the most efficient way to calculate gravitational pull between multiple objects in real-time without killing performance? Currently using plain JS with Canvas but open to WebGL solutions.
+                    </p>
+                    <div class="question-footer">
+                        <div class="tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">GameDev</span>
+                            <span class="tag">Physics</span>
+                            <span class="tag">Optimization</span>
+                        </div>
+                        <div class="actions">
+                            <button class="action-btn"><i class="far fa-thumbs-up"></i> 8</button>
+                            <button class="action-btn"><i class="far fa-comment"></i> 3</button>
+                            <button class="action-btn"><i class="fas fa-share"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <div class="question-header">
+                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Profile" class="profile-pic">
+                    <div class="user-info">
+                        <h3 class="user-name">BlackHoleHacker</h3>
+                        <p class="post-date">Posted on: 2023-05-05</p>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <p class="question-text">
+                        Challenge: Create a visual representation of spacetime curvature due to gravity using D3.js. I've got the grid bending correctly around a single mass, but how would you approach showing multiple gravitational sources interacting? Any math or visualization tips appreciated!
+                    </p>
+                    <div class="question-footer">
+                        <div class="tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">D3.js</span>
+                            <span class="tag">DataViz</span>
+                            <span class="tag">Relativity</span>
+                        </div>
+                        <div class="actions">
+                            <button class="action-btn"><i class="far fa-thumbs-up"></i> 15</button>
+                            <button class="action-btn"><i class="far fa-comment"></i> 7</button>
+                            <button class="action-btn"><i class="fas fa-share"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="post-question">
+            <h3><i class="fas fa-rocket"></i> Post Your Cosmic Coding Question</h3>
+            <form id="questionForm">
+                <div class="form-group">
+                    <label for="userName">Your Name:</label>
+                    <input type="text" id="userName" required>
+                </div>
+                <div class="form-group">
+                    <label for="userPhoto">Profile Photo URL:</label>
+                    <input type="url" id="userPhoto" placeholder="https://example.com/photo.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="questionTitle">Question Title:</label>
+                    <input type="text" id="questionTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="questionText">Your Question:</label>
+                    <textarea id="questionText" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="questionTags">Tags (comma separated):</label>
+                    <input type="text" id="questionTags" placeholder="JavaScript, Physics, Three.js">
+                </div>
+                <button type="submit" class="submit-btn">Launch Question <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+    <script src="js/community.js"></script>
+</body>
+</html>

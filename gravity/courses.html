@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/courses.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/gc_logo1.png">
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar3">
+        <a href="#" class="navbar-brand">
+            <i class="fas fa-rocket logo-icon"></i>
+            <span class="logo-textt">COSMIC CODER</span>
+        </a>
+        <div class="nav-linkss">
+            <a href="/index.html" class="nav-linkss active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-linkss">
+                <i class="fas fa-book"></i>
+                <span>Courses</span>
+            </a>
+            <a href="#leaderboard" class="nav-linkss">
+                <i class="fas fa-trophy"></i>
+                <span>Leaderboard</span>
+            </a>
+            <a href="#" class="nav-linkss">
+                <i class="fas fa-user-astronaut"></i>
+                <span>Profile</span>
+            </a>
+            <div class="user-profile" id="user-profile">
+                <div class="user-avatar">JS</div>
+                <span class="user-name">John Smith</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="page-header slide-in-top">
+            <h1 class="page-title">FULL STACK DEVELOPMENT PATH</h1>
+            <p class="page-subtitle">Embark on an interstellar journey to master full-stack development. Complete modules, earn achievements, and track your progress through the cosmos of code.</p>
+            
+            <div class="stats-container">
+                <div class="stat-card slide-in-left" style="animation-delay: 0.2s">
+                    <i class="fas fa-code stat-icon"></i>
+                    <div class="stat-value" id="completed-modules">0</div>
+                    <div class="stat-label">Modules Completed</div>
+                </div>
+                <div class="stat-card slide-in-top" style="animation-delay: 0.3s">
+                    <i class="fas fa-check-circle stat-icon"></i>
+                    <div class="stat-value" id="completed-tasks">0</div>
+                    <div class="stat-label">Tasks Completed</div>
+                </div>
+                <div class="stat-card slide-in-bottom" style="animation-delay: 0.4s">
+                    <i class="fas fa-medal stat-icon"></i>
+                    <div class="stat-value" id="earned-badges">0</div>
+                    <div class="stat-label">Badges Earned</div>
+                </div>
+                <div class="stat-card slide-in-right" style="animation-delay: 0.5s">
+                    <i class="fas fa-star stat-icon"></i>
+                    <div class="stat-value" id="total-xp">0</div>
+                    <div class="stat-label">Total XP</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Roadmap Section -->
+        <section class="roadmap-section" id="roadmap">
+            <h2 class="section-title slide-in-left">
+                <i class="fas fa-map"></i>
+                Learning Path
+            </h2>
+            
+            <div class="roadmap-container">
+                <div class="nodes" id="nodes">
+                    <!-- Nodes will be added dynamically with JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section class="progress-section" id="progress">
+            <div class="progress-container slide-in-left">
+                <div class="radial-progress">
+                    <svg>
+                        <defs>
+                            <linearGradient id="progress-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#00cec9" />
+                                <stop offset="100%" stop-color="#6c5ce7" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="bg-circle" cx="50%" cy="50%" r="45%"></circle>
+                        <circle class="progress-circle" cx="50%" cy="50%" r="45%"></circle>
+                    </svg>
+                    <div class="progress-text">
+                        <div class="progress-percent" id="progress-percent">0%</div>
+                        <div class="progress-label">Course Completed</div>
+                    </div>
+                </div>
+                
+                <div class="achievements-container">
+                    <div class="achievement completed slide-in-right" style="animation-delay: 0.2s">
+                        <div class="achievement-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <div class="achievement-title">First Steps</div>
+                            <div class="achievement-desc">Complete your first module</div>
+                        </div>
+                    </div>
+                    <div class="achievement slide-in-right" style="animation-delay: 0.4s">
+                        <div class="achievement-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <div class="achievement-title">Version Control</div>
+                            <div class="achievement-desc">Master Git basics</div>
+                        </div>
+                    </div>
+                    <div class="achievement slide-in-right" style="animation-delay: 0.6s">
+                        <div class="achievement-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <div class="achievement-title">Backend Explorer</div>
+                            <div class="achievement-desc">Complete Node.js module</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="streak-container slide-in-left" style="animation-delay: 0.3s">
+                <div class="streak-header">
+                    <i class="fas fa-fire streak-icon"></i>
+                    <div class="streak-info">
+                        <div class="streak-count" id="streak-count">0</div>
+                        <div class="streak-label">Day Streak</div>
+                    </div>
+                </div>
+                <div class="streak-days" id="streak-days">
+                    <!-- Days will be added dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section class="leaderboard-section" id="leaderboard">
+            <h2 class="section-title slide-in-right">
+                <i class="fas fa-trophy"></i>
+                Galactic Leaderboard
+            </h2>
+            
+            <div class="leaderboard-container slide-in-bottom">
+                <div class="leaderboard-header">
+                    <h3 class="leaderboard-title">Top Coders This Week</h3>
+                    <div class="leaderboard-tabs">
+                        <button class="tab-btn active">Weekly</button>
+                        <button class="tab-btn">Monthly</button>
+                        <button class="tab-btn">All-Time</button>
+                    </div>
+                </div>
+                
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>User</th>
+                            <th>Progress</th>
+                            <th>XP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="rank-1">
+                            <td class="user-rank">1</td>
+                            <td>
+                                <div class="user-info">
+                                    <div class="user-avatar-small">AD</div>
+                                    <div class="user-name">Alex Developer</div>
+                                </div>
+                            </td>
+                            <td class="user-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 92%"></div>
+                                </div>
+                            </td>
+                            <td class="user-xp">4,850</td>
+                        </tr>
+                        <tr class="rank-2">
+                            <td class="user-rank">2</td>
+                            <td>
+                                <div class="user-info">
+                                    <div class="user-avatar-small">CW</div>
+                                    <div class="user-name">Code Wizard</div>
+                                </div>
+                            </td>
+                            <td class="user-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 87%"></div>
+                                </div>
+                            </td>
+                            <td class="user-xp">4,320</td>
+                        </tr>
+                        <tr class="rank-3 HARSH">
+                            <td class="user-rank">3</td>
+                            <td>
+                                <div class="user-info">
+                                    <div class="user-avatar-small">JS</div>
+                                    <div class="user-name">John Smith</div>
+                                </div>
+                            </td>
+                            <td class="user-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 78%"></div>
+                                </div>
+                            </td>
+                            <td class="user-xp">3,950</td>
+                        </tr>
+                        <tr>
+                            <td class="user-rank">4</td>
+                            <td>
+                                <div class="user-info">
+                                    <div class="user-avatar-small">BD</div>
+                                    <div class="user-name">Binary Dreamer</div>
+                                </div>
+                            </td>
+                            <td class="user-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                            </td>
+                            <td class="user-xp">3,250</td>
+                        </tr>
+                        <tr>
+                            <td class="user-rank">5</td>
+                            <td>
+                                <div class="user-info">
+                                    <div class="user-avatar-small">SC</div>
+                                    <div class="user-name">Space Coder</div>
+                                </div>
+                            </td>
+                            <td class="user-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 58%"></div>
+                                </div>
+                            </td>
+                            <td class="user-xp">2,900</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="fade-in" style="animation-delay: 0.5s">
+        <p>© 2024 Gravity Coding. All rights reserved.</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Welcome to Cosmic Coder</h3>
+                <p class="modal-subtitle">Sign in to continue your coding journey</p>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="close-modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/courses.js">
+    </script>
+</body>
+</html>

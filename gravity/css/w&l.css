@@ -1,0 +1,864 @@
+.learn-section {
+   margin-top: 150px;
+    padding: 2rem;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  :root {
+    --space-light: #e0e0e0;
+    --primary: #FF0000;
+    --secondary: #282828;
+    --dark: #000000;
+    --light: #121212;
+    --accent: #aaaaaa;
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ body {
+    font-family: 'Roboto Mono', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--space-light);
+    padding: 2rem;
+    margin-right: -50px;
+}
+
+.learn-section h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--space-light);
+    position: center;
+    justify-content: center;
+    
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(224, 224, 224, 0.5);
+    animation: glow 3s infinite ease-in-out;
+}
+
+@keyframes glow {
+0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #0ff; }
+50% { text-shadow: 0 0 20px #0ff, 0 0 30px #fff; }
+}
+
+
+.learn-section h1:hover {
+    text-shadow: 0 0 15px rgba(224, 224, 224, 0.8);
+}
+
+
+
+.learn-section h1::after {
+    content: '';
+    position: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--space-light);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.learn-section .subtitle3 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.2rem;
+    color: var(--space-light);
+    margin-bottom: 3rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.learn-section .videos {
+display: flex;
+justify-content: center;
+gap: 5.5rem;
+margin-bottom: 3rem;
+flex-wrap: nowrap;
+.videos {
+max-width: 1200px; /* or 100% for full width */
+}
+
+width: 100%;
+}
+
+.learn-section .video-container {
+perspective: 1000px;
+aspect-ratio: 16 / 9;
+position: relative;
+overflow: hidden;
+flex: 1;
+min-width: 0;
+animation: float 6s ease-in-out infinite;
+transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+}
+
+.learn-section .video-thumbnail {
+position: relative;
+display: block;
+width: 100%;
+height: 100%;
+border-radius: 16px;
+overflow: hidden;
+transform-style: preserve-3d;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+will-change: transform;
+background: rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+border-radius: 20px;
+}
+
+
+.learn-section #V1 {
+box-shadow:
+0 0 5px rgba(0, 255, 100, 0.4),
+0 0 10px rgba(0, 255, 100, 0.3),
+0 0 20px rgba(0, 255, 100, 0.2);
+}
+
+.learn-section #V2 {
+box-shadow:
+0 0 5px rgba(255, 0, 0, 0.4),
+0 0 10px rgba(255, 0, 0, 0.3),
+0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.learn-section #V3 {
+box-shadow:
+0 0 5px rgba(0, 200, 255, 0.4),
+0 0 10px rgba(0, 200, 255, 0.3),
+0 0 20px rgba(0, 200, 255, 0.2);
+}
+
+.learn-section #V1:hover {
+box-shadow:
+0 0 10px rgba(0, 255, 100, 0.4),
+0 0 20px rgba(0, 255, 100, 0.3),
+0 0 30px rgba(0, 255, 100, 0.2);
+}
+
+.learn-section #V2:hover {
+box-shadow:
+0 0 10px rgba(255, 0, 0, 0.4),
+0 0 20px rgba(255, 0, 0, 0.3),
+0 0 30px rgba(255, 0, 0, 0.2);
+}
+
+.learn-section #V3:hover {
+box-shadow:
+0 0 10px rgba(0, 200, 255, 0.4),
+0 0 20px rgba(0, 200, 255, 0.3),
+0 0 30px rgba(0, 200, 255, 0.2);
+}
+
+
+
+
+.learn-section .video-container,
+.glass {
+overflow: visible; /* allow shadows to show */
+}
+
+
+.learn-section .video-thumbnail img {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Fill and crop if needed */
+border-radius: 16px;
+display: block;
+}
+
+
+.learn-section .video-container:hover .video-thumbnail {
+transform: scale(1.03) rotateX(2deg) rotateY(2deg);
+}
+
+
+.learn-section .video-thumbnail:hover img {
+/* Removed scale to keep size constant */
+filter: brightness(1.05);
+}
+
+.learn-section .video-thumbnail::before {
+content: '';
+position: absolute;
+top: 0; left: 0;
+width: 100%; height: 100%;
+opacity: 0.1;
+z-index: 0;
+pointer-events: none;
+}
+
+@keyframes float {
+0%, 100% { transform: translateY(-4px); }
+50% { transform: translateY(4px); }
+}
+
+.learn-section .video-thumbnail::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.3);
+opacity: 0;
+transition: all 0.3s ease;
+}
+
+.learn-section .video-thumbnail:hover::after {
+opacity: 1;
+}
+
+.learn-section .video-thumbnail:hover .play-icon {
+opacity: 1;
+transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* From Uiverse.io by Spacious74 */ 
+.learn-section .outer {
+width: 300px;
+height: 250px;
+border-radius: 10px;
+padding: 1px;
+background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
+position: relative;
+margin-bottom: 40px;
+}
+
+.learn-section .dot {
+width: 5px;
+aspect-ratio: 1;
+position: absolute;
+background-color: #fff;
+box-shadow: 0 0 10px #ffffff;
+border-radius: 100px;
+z-index: 2;
+right: 10%;
+top: 10%;
+animation: moveDot 6s linear infinite;
+}
+
+@keyframes moveDot {
+0%,
+100% {
+top: 10%;
+right: 10%;
+}
+25% {
+top: 10%;
+right: calc(100% - 35px);
+}
+50% {
+top: calc(100% - 30px);
+right: calc(100% - 35px);
+}
+75% {
+top: calc(100% - 30px);
+right: 10%;
+}
+}
+
+.learn-section .cardd {
+z-index: 1;
+width: 100%;
+height: 100%;
+border-radius: 9px;
+border: solid 1px #202222;
+background-size: 20px 20px;
+background: radial-gradient(circle 280px at 0% 0%, #444444, #0c0d0d);
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+flex-direction: column;
+color: #fff;
+}
+
+.learn-section .ray {
+width: 200px;
+height: 40px;
+border-radius: 100px;
+position: absolute;
+background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+opacity: 0.3;
+box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+filter: blur(6px);
+transform-origin: 10%;
+top: 10px;
+left: 10px;
+transform: rotate(35deg);
+pointer-events: none;
+}
+
+
+.learn-section .cardd .learn-section .text {
+font-weight: bolder;
+font-size: 2.5rem;
+background: linear-gradient(45deg, #000000 4%, #fff, #000);
+background-clip: text;
+color: transparent;
+}
+
+.learn-section .line {
+width: 100%;
+height: 1px;
+position: absolute;
+background-color: #2c2c2c;
+}
+.learn-section .topl {
+top: 10%;
+background: linear-gradient(90deg, #888888 30%, #1d1f1f 70%);
+}
+.learn-section .bottoml {
+bottom: 10%;
+}
+.learn-section .leftl {
+left: 10%;
+width: 1px;
+height: 100%;
+background: linear-gradient(180deg, #747474 30%, #222424 70%);
+}
+.learn-section .rightl {
+right: 10%;
+width: 1px;
+height: 100%;
+}
+
+.learn-section .stats {
+display: flex;
+justify-content:center;
+flex-wrap: wrap;
+gap: 30px;
+padding: 30px 0;
+}
+
+
+.learn-section .text {
+translate: 2% -6%;
+letter-spacing: 0.01ch;
+color: hsl(0 0% calc(60% + (var(--active) * 26%)));
+z-index: 999;
+padding: 0 34px;
+font-weight: 600;
+font-size:30px;
+}
+.learn-section .text::before {
+content: "";
+position: absolute;
+top: -290%;
+left: 90%;
+rotate: -45deg;
+width: 5em;
+height: 3px;
+background: linear-gradient(90deg, #ffffff, transparent);
+animation: 4s shootingStar ease-in-out infinite;
+transition: 1s ease;
+z-index: -1;
+animation-delay: 1s;
+display: none;
+}
+.learn-section .text::after {
+content: "";
+display: none;
+position: absolute;
+top: -290%;
+left: 10%;
+rotate: -45deg;
+width: 5em;
+height: 1px;
+background: linear-gradient(90deg, #ffffff, transparent);
+animation: 7s shootingStar ease-in-out infinite;
+animation-delay: 3s;
+}
+.learn-section .space-button:hover .text::before,
+.space-button:hover .text::after {
+display: block;
+}
+.learn-section .galaxy::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 2px;
+height: 2px;
+border-radius: 50%;
+opacity: 1;
+box-shadow:
+140px 20px #fff,
+425px 20px #fff,
+70px 120px #fff,
+20px 130px #fff,
+110px 80px #fff,
+280px 80px #fff,
+250px 350px #fff,
+280px 230px #fff,
+220px 190px #fff,
+450px 100px #fff,
+380px 80px #fff,
+520px 50px #fff;
+z-index: -1;
+transition: all 1.5s ease-in-out;
+animation: 1s glowing-stars linear alternate infinite;
+animation-delay: 0.4s;
+}
+.learn-section .galaxy::after {
+content: "";
+position: absolute;
+top: -150px;
+left: -65px;
+width: 2px;
+height: 2px;
+border-radius: 50%;
+opacity: 1;
+box-shadow:
+490px 330px #fff,
+420px 300px #fff,
+320px 280px #fff,
+380px 350px #fff,
+546px 170px #fff,
+420px 180px #fff,
+370px 150px #fff,
+200px 250px #fff,
+80px 20px #fff,
+190px 50px #fff,
+270px 20px #fff,
+120px 230px #fff,
+350px -1px #fff,
+150px 369px #fff;
+z-index: -1;
+transition: all 2s ease-in-out;
+animation: 1s glowing-stars linear alternate infinite;
+animation-delay: 0.8s;
+}
+.learn-section .space-button {
+--cut: 0.1em;
+--active: 0;
+--bg: radial-gradient(
+120% 120% at 126% 126%,
+hsl(0 calc(var(--active) * 97%) 98% / calc(var(--active) * 0.9)) 40%,
+/* Changed hue to 0 for red */ transparent 50%
+)
+calc(100px - (var(--active) * 100px)) 0 / 100% 100% no-repeat,
+radial-gradient(
+120% 120% at 120% 120%,
+hsl(0 calc(var(--active) * 97%) 70% / calc(var(--active) * 1)) 30%,
+/* Changed hue to 0 for red */ transparent 70%
+)
+calc(100px - (var(--active) * 100px)) 0 / 100% 100% no-repeat,
+hsl(0 calc(var(--active) * 100%) calc(12% - (var(--active) * 8%))); /* Changed hue to 0 for red */
+background: var(--bg);
+font-size: 1.1rem;
+font-weight: 400;
+border: 0;
+cursor: pointer;
+padding: 1.7em 1.9em;
+display: flex;
+align-items: center;
+gap: 0.25em;
+white-space: nowrap;
+border-radius: 1rem;
+position: relative;
+box-shadow:
+0 0 calc(var(--active) * 6em) calc(var(--active) * 3em)
+hsla(12, 97%, 61%, 0.3),
+0 0.05em 0 0
+hsl(0, calc(var(--active) * 97%), calc((var(--active) * 50%) + 30%)) inset,
+0 -0.05em 0 0 hsl(0, calc(var(--active) * 97%), calc(var(--active) * 10%)) inset;
+
+transition:
+box-shadow 0.25s ease-out,
+scale 0.25s,
+background 0.25s;
+scale: calc(1 + (var(--active) * 0.1));
+transform-style: preserve-3d;
+perspective: 100vmin;
+overflow: hidden;
+}
+
+.learn-section .space-button:active {
+scale: 1;
+--bg: radial-gradient(
+120% 120% at 126% 126%,
+hsl(245 calc(var(--active) * 97%) 98% / calc(var(--active) * 0.9)) 40%,
+transparent 50%
+)
+calc(100px - (var(--active) * 100px)) 0 / 100% 100% no-repeat,
+radial-gradient(
+120% 120% at 120% 120%,
+hsl(245 calc(var(--active) * 97%) 70% / calc(var(--active) * 1)) 30%,
+transparent 70%
+)
+calc(100px - (var(--active) * 100px)) 0 / 100% 100% no-repeat,
+hsl(245 calc(var(--active) * 100%) calc(12% - (var(--active) * 8%)));
+box-shadow:
+0 0 calc(var(--active) * 6em) calc(var(--active) * 3em)
+hsl(245 97% 61% / 0.5),
+0 0.05em 0 0
+hsl(245 calc(var(--active) * 97%) calc((var(--active) * 50%) + 30%)) inset,
+0 -0.05em 0 0 hsl(245 calc(var(--active) * 97%) calc(var(--active) * 10%)) inset;
+background: var(--bg);
+}
+
+/* Apply wobble animation on active button */
+.learn-section .space-button:active .text {
+font-weight: 300;
+animation:
+wobble 0.6s ease-in-out infinite,
+blurMove 1.5s ease-in-out infinite;
+text-shadow:
+5px 5px 20px rgba(255, 255, 255, 0.8),
+10px 10px 30px rgba(255, 0, 255, 0.6);
+}
+
+/* Wobble animation */
+@keyframes wobble {
+0%,
+100% {
+transform: translate(0, 0);
+}
+25% {
+transform: translate(-2px, -10px);
+}
+50% {
+transform: translate(2px, 3px);
+}
+75% {
+transform: translate(-1px, 5px);
+}
+}
+
+/* Blur move animation */
+@keyframes blurMove {
+0%,
+100% {
+text-shadow:
+5px 5px 20px rgba(255, 255, 255, 0.8),
+10px 10px 30px rgba(255, 0, 255, 0.6);
+}
+50% {
+filter: blur(1px);
+text-shadow:
+10px 10px 25px rgba(255, 255, 255, 0.8),
+15px 15px 35px rgba(255, 0, 255, 0.6);
+}
+}
+
+.learn-section .galaxy:active::before {
+animation: circling 2s linear infinite; /* Animation for circling effect */
+}
+.learn-section .galaxy:active::after {
+animation: circling 1.5s linear infinite; /* Animation for circling effect */
+}
+
+@keyframes circling {
+0% {
+transform: translate(-10px, -20%) rotate(0deg);
+}
+100% {
+transform: translate(-10px, -20%) rotate(200deg);
+}
+}
+.learn-section .galaxy {
+position: absolute;
+width: 100%;
+aspect-ratio: 1;
+top: 50%;
+left: 50%;
+translate: -50% -50%;
+overflow: hidden;
+opacity: var(--active);
+transition: opacity 0.25s;
+}
+
+@-webkit-keyframes move-x {
+0% {
+translate: -100px 0;
+}
+100% {
+translate: 100px 0;
+}
+}
+@keyframes move-x {
+0% {
+translate: -100px 0;
+}
+100% {
+translate: 100px 0;
+}
+}
+@-webkit-keyframes move-y {
+0% {
+transform: translate(0, -50px);
+}
+100% {
+transform: translate(0, 50px);
+}
+}
+@keyframes move-y {
+0% {
+transform: translate(0, -50px);
+}
+100% {
+transform: translate(0, 50px);
+}
+}
+
+.learn-section .backdrop {
+position: absolute;
+justify-content:center;
+inset: var(--cut);
+background: var(--bg);
+border-radius: 2rem;
+transition: background 0.25s;
+}
+
+.learn-section .galaxy-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .learn-section .galaxy-buttonn {
+    width: 290px;
+    height: auto;
+    margin-bottom: 100px;
+  }
+  
+
+
+@supports (selector(:has(:is(+ *)))) {
+    .learn-section body:has(button:is(:hover, :focus-visible)) {
+--active: 1;
+--play-state: running;
+}
+.learn-section .bodydrop {
+display: none;
+}
+}
+
+.learn-section .space-button:is(:hover, :focus-visible) ~ :is(.learn-section .bodydrop, .learn-section .particle-pen) {
+--active: 1;
+--play-state: running;
+}
+
+.learn-section .space-button:is(:hover, :focus-visible) {
+--active: 1;
+--play-state: running;
+}
+
+.learn-section .galaxy-button {
+position:relative;
+justify-content:center;
+}
+
+/* ANIMATIONS */
+@keyframes shootingStar {
+0% {
+transform: translateX(0) translateY(0);
+opacity: 1;
+}
+50% {
+transform: translateX(-55em) translateY(0);
+opacity: 1;
+}
+70% {
+transform: translateX(-70em) translateY(0);
+opacity: 0;
+}
+100% {
+transform: translateX(0) translateY(0);
+opacity: 0;
+}
+}
+
+@keyframes glowing-stars {
+0% {
+opacity: 0;
+}
+
+50% {
+opacity: 1;
+}
+
+100% {
+opacity: 0;
+}
+}
+
+
+@keyframes pulse {
+0%, 100% { transform: scale(1); opacity: 0.7; }
+50% { transform: scale(1.1); opacity: 1; }
+}
+
+.learn-section .stat-item i {
+animation: pulse 2s infinite;
+}
+
+
+.learn-section .btn:hover::before {
+    left: 100%;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .learn-section .subtitle {
+        font-size: 1rem;
+    }
+    
+    .learn-section .stats {
+        gap: 1rem;
+    }
+    
+    .learn-section .stat-item {
+        padding: 0.8rem;
+        min-width: 100px;
+    }
+    
+    .learn-section .videos {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .learn-section .video-container {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .learn-section .video-container {
+        flex: 0 0 100%;
+    }
+}
+
+.learn-section .glass {
+  width: 100%;
+  height: auto;
+display: inline-block;
+padding: 12px;
+border-radius: 18px;
+background: rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+box-shadow:
+inset 0 0 15px rgba(255, 255, 255, 0.03),
+0 0 10px rgba(0, 255, 255, 0.05),
+0 0 20px rgba(0, 255, 255, 0.03);
+border: 1px solid rgba(255, 255, 255, 0.05);
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+}
+.learn-section .glass::before {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, transparent 60%);
+transform: rotate(25deg);
+animation: glass-shimmer 8s linear infinite;
+pointer-events: none;
+z-index: 1;
+}
+
+@keyframes glass-shimmer {
+0% {
+transform: translateX(-100%) rotate(25deg);
+}
+100% {
+transform: translateX(100%) rotate(25deg);
+}
+}
+
+.learn-section .outer:hover .galaxy-sparks::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 2px;
+height: 2px;
+border-radius: 50%;
+opacity: 1;
+box-shadow:
+40px 20px #fff,
+125px 20px #fff,
+70px 120px #fff,
+20px 130px #fff,
+110px 80px #fff,
+80px 80px #fff,
+50px 150px #fff,
+80px 130px #fff,
+120px 90px #fff,
+150px 100px #fff,
+180px 80px #fff,
+220px 50px #fff;
+z-index: 2;
+animation: glowing-stars 1s linear alternate infinite;
+animation-delay: 0.4s;
+}
+
+.learn-section .outer:hover .galaxy-sparks::after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 2px;
+height: 2px;
+border-radius: 50%;
+opacity: 1;
+box-shadow:
+90px 130px #fff,
+120px 100px #fff,
+120px 80px #fff,
+80px 150px #fff,
+146px 170px #fff,
+120px 180px #fff,
+170px 150px #fff,
+100px 150px #fff,
+80px 20px #fff,
+90px 50px #fff,
+70px 20px #fff,
+120px 130px #fff,
+150px 10px #fff,
+150px 169px #fff;
+z-index: 2;
+animation: glowing-stars 1s linear alternate infinite;
+animation-delay: 0.8s;
+}
+
+.learn-section .galaxy-sparks {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+overflow: hidden;
+opacity: 0;
+transition: opacity 0.3s ease;
+pointer-events: none;
+}
+
+.learn-section .outer:hover .galaxy-sparks {
+opacity: 1;
+}

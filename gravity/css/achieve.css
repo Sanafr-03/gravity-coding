@@ -1,0 +1,788 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0a0a20;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Cosmic background container */
+.cosmic-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.quote h1 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    width: 79%;
+    margin-top: 80px;
+    margin-left: 255px;
+    text-shadow: 
+    0 0 2px #fff,      
+    0 0 2px #003cff,   
+    0 0 2px #a200ffaf,   
+    0 0 10px #8854d0;
+  }
+
+/* Navbar Styles */
+.navbar2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px 24px;
+    background-color: rgba(30, 30, 47, 0.85); /* slightly transparent */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+}
+
+/* Left Section */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 120px;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Center Section */
+.navbar-center {
+    text-align: center;
+    flex: 12;  /* Adjusted to take more space */
+    min-width: 200px;
+    display: flex;
+    justify-content: center;  /* Centers the content horizontally */
+}
+
+.navbar-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffd700;
+    margin-right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar2 {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .navbar-left,
+    .navbar-center {
+        justify-content: center;
+        margin: 8px 0;
+    }
+
+    .navbar-title {
+        font-size: 1.2rem;
+        margin-left: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 32px;
+    }
+
+    .brand-name {
+        font-size: 1rem;
+    }
+
+    .navbar-title {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+/* Add this to your style.css */
+.sidebar {
+    position: fixed;
+    top: 64px;
+    left: -250px;
+    width: 250px;
+    height: calc(100vh - 64px);
+    background-color: rgba(20, 20, 40, 0.95);
+    color: white;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(138, 43, 226, 0.2);
+    color: #00d9ff;
+}
+
+.sidebar-item.active {
+    background-color: rgba(138, 43, 226, 0.4);
+    border-left: 3px solid #8a2be2;
+    color: #00d9ff;
+}
+
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: block;
+    }
+    
+    .sidebar {
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media (min-width: 769px) {
+    .sidebar {
+        left: 0;
+    }
+    
+    .main-content {
+        margin-left: 250px;
+    }
+}
+
+
+/* Previous styles remain the same until .main-content */
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 270px; /* Same as sidebar width */
+    padding: 20px;
+    transition: margin 0.3s ease;
+    min-height: calc(100vh - 64px);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Exactly 5 in a row */
+    gap: 50px;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .parent > div {
+    background-color: rgba(30, 30, 47, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    transition: all 0.3s ease;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .parent > div:hover {
+    background-color: rgba(138, 43, 226, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(138, 43, 226, 0.4);
+  }
+  
+  
+  /* Grid item specific styles */
+  .div1 { grid-row: span 2 / span 2; }
+  .div2 { grid-row: span 2 / span 2; }
+  .div3 { grid-row: span 2 / span 2; }
+  .div4 { grid-row: span 2 / span 2; }
+  .div5 { grid-row: span 2 / span 2; grid-row-start: 3; }
+  .div6 { grid-row: span 2 / span 2; grid-row-start: 3; }
+  .div7 { grid-row: span 2 / span 2; grid-row-start: 3; }
+  .div8 { grid-row: span 2 / span 2; grid-row-start: 3; }
+  .div9 { grid-row: span 2 / span 2; grid-row-start: 5; }
+  .div10 { grid-row: span 2 / span 2; grid-row-start: 5; }
+  .div11 { grid-row: span 2 / span 2; grid-row-start: 5; }
+  .div12 { grid-row: span 2 / span 2; grid-row-start: 5; }
+  .div13 { grid-row: span 2 / span 2; grid-row-start: 7; }
+  .div14 { grid-row: span 2 / span 2; grid-row-start: 7; }
+  .div15 { grid-row: span 2 / span 2; grid-row-start: 7; }
+  .div16 { grid-row: span 2 / span 2; grid-row-start: 7; }
+  .div17 { grid-row: span 2 / span 2; grid-row-start: 9; }
+  .div18 { grid-row: span 2 / span 2; grid-row-start: 9; }
+  .div19 { grid-row: span 2 / span 2; grid-row-start: 9; }
+  .div20 { grid-row: span 2 / span 2; grid-row-start: 9; }
+  .div21 { grid-row: span 2 / span 2; grid-row-start: 11; }
+.div22 { grid-row: span 2 / span 2; grid-row-start: 11; }
+.div23 { grid-row: span 2 / span 2; grid-row-start: 11; }
+.div24 { grid-row: span 2 / span 2; grid-row-start: 11; }
+.div25 { grid-row: span 2 / span 2; grid-row-start: 13; }
+.div26 { grid-row: span 2 / span 2; grid-row-start: 13; }
+.div27 { grid-row: span 2 / span 2; grid-row-start: 13; }
+.div28 { grid-row: span 2 / span 2; grid-row-start: 13; }
+.div29 { grid-row: span 2 / span 2; grid-row-start: 15; }
+.div30 { grid-row: span 2 / span 2; grid-row-start: 15; }
+.div31 { grid-row: span 2 / span 2; grid-row-start: 15; }
+.div32 { grid-row: span 2 / span 2; grid-row-start: 15; }
+.div33 { grid-row: span 2 / span 2; grid-row-start: 17; }
+.div34 { grid-row: span 2 / span 2; grid-row-start: 17; }
+.div35 { grid-row: span 2 / span 2; grid-row-start: 17; }
+.div36 { grid-row: span 2 / span 2; grid-row-start: 17; }
+.div37 { grid-row: span 2 / span 2; grid-row-start: 19; }
+.div38 { grid-row: span 2 / span 2; grid-row-start: 19; }
+.div39 { grid-row: span 2 / span 2; grid-row-start: 19; }
+.div40 { grid-row: span 2 / span 2; grid-row-start: 19; }
+
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .parent {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .parent {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-content {
+      margin-left: 0;
+      padding: 15px;
+    }
+    
+    .parent {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .parent {
+      grid-template-columns: 1fr;
+    }
+    
+    .parent > div {
+      aspect-ratio: 2/1;
+    }
+  }
+
+
+.achievement-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating keyframes */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+
+
+
+
+  .xp-tables-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.xp-table {
+    background-color: #1b1f3b;
+    padding: 20px;
+    border-radius: 10px;
+    width: 58%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-left: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.xp-table:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.xp-table h2 {
+    color: #5ec4ff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: 400;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+th {
+    background-color: #252a48;
+    color: #FDC500;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+tr:nth-child(even) {
+    background-color: #2a3048;
+}
+
+tr:hover {
+    background-color: #3a4170;
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+td {
+    background-color: #1f2335;
+    border-radius: 8px;
+    color: #ddd;
+}
+
+td:first-child {
+    font-weight: 600;
+    color: #5ec4ff;
+}
+
+/* Hover Animation */
+td:hover {
+    transform: scale(1);
+}
+
+/* Icons in the Table */
+.icon {
+    margin-right: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .xp-tables-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .xp-table {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Styling for each Achievement Container */
+.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9, .div10,
+.div11, .div12, .div13, .div14, .div15, .div16, .div17, .div18, .div19, .div20,
+.div21, .div22, .div23, .div24, .div25, .div26, .div27, .div28, .div29, .div30,
+.div31, .div32, .div33, .div34, .div35, .div36, .div37, .div38, .div39, .div40 {
+    background-color: rgba(30, 30, 47, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    transition: all 0.3s ease;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    perspective: 1000px;  /* Adds depth for 3D effect */
+    transform-style: preserve-3d; /* Ensures the child elements preserve the 3D space */
+}
+
+/* Hover Effect with Tilt */
+.div1:hover, .div2:hover, .div3:hover, .div4:hover, .div5:hover, .div6:hover, .div7:hover, 
+.div8:hover, .div9:hover, .div10:hover, .div11:hover, .div12:hover, .div13:hover, .div14:hover, 
+.div15:hover, .div16:hover, .div17:hover, .div18:hover, .div19:hover, .div20:hover, 
+.div21:hover, .div22:hover, .div23:hover, .div24:hover, .div25:hover, .div26:hover, .div27:hover, 
+.div28:hover, .div29:hover, .div30:hover, .div31:hover, .div32:hover, .div33:hover, .div34:hover, 
+.div35:hover, .div36:hover, .div37:hover, .div38:hover, .div39:hover, .div40:hover {
+    background-color: rgba(138, 43, 226, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(138, 43, 226, 0.4);
+}
+
+/* 3D Effect for Tilt on Mouse Move */
+.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9, .div10,
+.div11, .div12, .div13, .div14, .div15, .div16, .div17, .div18, .div19, .div20,
+.div21, .div22, .div23, .div24, .div25, .div26, .div27, .div28, .div29, .div30,
+.div31, .div32, .div33, .div34, .div35, .div36, .div37, .div38, .div39, .div40 {
+    transition: transform 0.1s ease-out;
+}
+
+/* Icon Style */
+.achievement-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+/* Title Style */
+.achievement-title {
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+
+.div5 .text {
+    margin-right: 70px;
+    font-size: 1rem;
+}
+
+.div5 .achievement-title {
+    font-size: 1.2rem;
+}
+
+
+.div6 .text {
+    margin-right: 60px;
+    font-size: 1rem;
+}
+
+.div7 .text {
+    margin-right: 80px;
+    font-size: 1rem;
+}
+
+.div7 .achievement-title {
+    font-size: 1.2rem;
+}
+
+.div13 .text {
+    margin-right: 40px;
+}
+
+.div14 .text {
+    margin-right: 40px;
+}
+
+.div15 .text {
+    margin-right: 70px;
+}
+
+.div17 .text {
+    margin-right: 40px;
+}
+
+.div18 .text {
+    margin-right: 40px;
+}
+
+.div19 .text {
+    margin-right: 60px;
+}
+
+.div19 .achievement-title {
+    font-size: 1.2rem;
+}
+
+.div21 .text {
+    margin-right: 20px;
+}
+
+.div22 .text {
+    margin-right: 10px;
+}
+
+.div23 .text {
+    margin-right:80px;
+}
+
+.div26 .text {
+    margin-right: 20px;
+}
+
+.div35 .achievement-title {
+    font-size: 1.2rem;
+}
+
+.div36 .text {
+    margin-right: 30px;
+}
+
+.div37 .text {
+    margin-right: 10px;
+}
+
+.div38 .text {
+    margin-right: 30px;
+}
+
+.div39 .text {
+    margin-right: 30px;
+}
+
+.div40 .text {
+    margin-right: 10px;
+}
+
+.tooltip-container {
+    --background: #ffffff;
+    --color: #e8e8e8;
+    position: relative;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color);
+    padding: 0.7em 1.8em;
+    border-radius: 8px;
+    text-transform: uppercase;
+    height: 60px;
+    width: 180px;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--color);
+  }
+  
+  .text {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.3em 0.6em;
+    background: white;
+    color: black;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+  }
+  
+  .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 0.6em;
+    width: 0.6em;
+    bottom: -0.3em;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    background: var(--background);
+  }
+  
+  .tooltip-container:hover .tooltip {
+    opacity: 1;
+  }
+  
+
+  .achievement-icon {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Floating keyframes */
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+
+  
+  
+  
+  @media (max-width: 768px) {
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .sidebar {
+      top: 0;
+      right: -250px; /* Keep hidden initially */
+      left: auto;
+      height: 100%;
+      background-color: #0b0620;
+      z-index: 1000;
+      transition: right 0.3s ease-in-out;
+      position: fixed;
+    }
+  
+    .sidebar.active {
+      right: 0;
+    }
+  
+    .hamburger-btn {
+      display: block;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: white;
+      z-index: 1100;
+      cursor: pointer;
+    }
+  
+    .main-content {
+      margin-left: 0;
+      padding: 80px 15px 20px;
+      text-align: center;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  
+    .quote h1 {
+      font-size: 1.5rem;
+      padding: 10px;
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .xp-table {
+      width: 95%;
+      margin: 20px auto;
+    }
+  
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    th, td {
+      font-size: 0.85rem;
+    }
+  
+    .parent {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 0 0px;
+      margin-left:-10px;
+    }
+  
+    .parent > div {
+      width: 100%;
+      max-width: 200px;
+      height: 180px;
+    }
+    
+  }
+  
+  @media (max-width: 480px) {
+    .tooltip-container {
+        width: 48%;      /* Roughly 2 per row with margin */
+        margin: 1%;      /* Small gap between boxes */
+      }
+    
+      .tooltip-container-parent {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    .parent {
+      grid-template-columns: 1fr;
+    }
+  
+    .parent > div {
+      aspect-ratio: 2/1;
+    }
+  
+    .navbar-title {
+      font-size: 1.1rem;
+    }
+  }
+  
